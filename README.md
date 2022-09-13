@@ -1,4 +1,5 @@
 ### Учебный проект: "Вычислитель отличий"
+<a href="https://codeclimate.com/github/DavidTsyganov/java-project-71/maintainability"><img src="https://api.codeclimate.com/v1/badges/dc5f6f1ef5317ac35c4e/maintainability" /></a>
 
 ### Что представляет из себя проект?
 Проект представляет из себя утилиту, которая показывает различия между двумя файлами, переданными на вход текстовыми файлами.
