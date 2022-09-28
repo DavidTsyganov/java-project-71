@@ -3,15 +3,13 @@ package hexlet.code;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import hexlet.formatters.Stylish;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Differ {
     public static void main(String[] args) throws Exception {
@@ -26,40 +24,41 @@ public class Differ {
         Map<String, Object> map1 = Parser.getMap(filepath1);
         Map<String, Object> map2 = Parser.getMap(filepath2);
 
-        diff = compareMaps(map1, map2);
+        Map<String, Status> resultMap = compareMaps(map1, map2);
+
+        diff = Stylish.format(resultMap);
 
         System.out.println(diff);
         return diff;
     }
 
 
-    private static String compareMaps(final Map<String, Object> map1, final Map<String, Object> map2) {
-        StringBuilder result = new StringBuilder();
-        result.append("{");
-        result.append(System.lineSeparator());
+    private static Map<String, Status> compareMaps(final Map<String, Object> map1, final Map<String, Object> map2) {
+        Set<String> setOfKeys = new TreeSet<>();
+        setOfKeys.addAll(map1.keySet());
+        setOfKeys.addAll(map2.keySet());
 
-        Set<String> keys = new TreeSet<>();
-        keys.addAll(map1.keySet());
-        keys.addAll(map2.keySet());
+        Map<String, Status> map = new LinkedHashMap<>();
 
-        for (String key : keys) {
-            if (!map1.keySet().contains(key)) {
-                result.append("  + " + key + ": " + map2.get(key));
-                result.append(System.lineSeparator());
-            } else if (!map2.keySet().contains(key)) {
-                result.append("  - " + key + ": " + map1.get(key));
-                result.append(System.lineSeparator());
-            } else if (map1.get(key).equals(map2.get(key))) {
-                result.append("    " + key + ": " + map1.get(key));
-                result.append(System.lineSeparator());
+
+        for (String key : setOfKeys) {
+            boolean key1Exists = map1.containsKey(key);
+            boolean key2Exists = map2.containsKey(key);
+
+            Object value1 = map1.get(key);
+            Object value2 = map2.get(key);
+
+            if (!key1Exists && key2Exists) {
+                map.put(key, new Status(Status.ADDED, value1, value2));
+            } else if (key1Exists && !key2Exists) {
+                map.put(key, new Status(Status.DELETED, value1, null));
+            } else if (key1Exists && key2Exists && value1 != null && value1.equals(value2)) {
+                map.put(key, new Status(Status.UNCHANGED, value1, value2));
             } else {
-                result.append("  - " + key + ": " + map1.get(key));
-                result.append(System.lineSeparator());
-                result.append("  + " + key + ": " + map2.get(key));
-                result.append(System.lineSeparator());
+                map.put(key, new Status(Status.CHANGED, value1, value2));
             }
         }
-        result.append("}");
-        return result.toString().trim();
+
+        return map;
     }
 }
