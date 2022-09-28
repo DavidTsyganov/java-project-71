@@ -20,6 +20,12 @@ dependencies {
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
 
+    // Jackson for YAML
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.3'
+
+
+
+
     testImplementation(
             'org.assertj:assertj-core:3.22.0'
     )

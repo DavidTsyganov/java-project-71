@@ -20,12 +20,11 @@ public class Differ {
         Differ.generate(file1, file2);
     }
 
-    public static String generate(final String filePath1, final String filePath2) throws Exception {
+    public static String generate(final String filepath1, final String filepath2) throws Exception {
         String diff = null;
-        String json1 = readFileToString(filePath1);
-        String json2 = readFileToString(filePath2);
-        Map<String, Object> map1 = jsonToMap(json1);
-        Map<String, Object> map2 = jsonToMap(json2);
+
+        Map<String, Object> map1 = Parser.getMap(filepath1);
+        Map<String, Object> map2 = Parser.getMap(filepath2);
 
         diff = compareMaps(map1, map2);
 
@@ -33,18 +32,6 @@ public class Differ {
         return diff;
     }
 
-    private static String readFileToString(final String filePath) throws IOException {
-        Path path = Paths.get(filePath);
-        String content = Files.readString(path);
-        return content;
-    }
-
-    private static Map<String, Object> jsonToMap(final String json) throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        Map<String, Object> map = new TreeMap<>();
-        map = mapper.readValue(json, new TypeReference<Map<String, Object>>() { });
-        return map;
-    }
 
     private static String compareMaps(final Map<String, Object> map1, final Map<String, Object> map2) {
         StringBuilder result = new StringBuilder();
@@ -72,7 +59,6 @@ public class Differ {
                 result.append(System.lineSeparator());
             }
         }
-
         result.append("}");
         return result.toString().trim();
     }
