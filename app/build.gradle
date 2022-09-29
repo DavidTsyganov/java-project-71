@@ -2,6 +2,8 @@ plugins {
     id 'java'
     id 'application'
     id 'checkstyle'
+    id 'jacoco'
+    id 'com.adarshr.test-logger' version '3.2.0'
 }
 
 group 'hexlet.code'
@@ -23,9 +25,6 @@ dependencies {
     // Jackson for YAML
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.3'
 
-
-
-
     testImplementation(
             'org.assertj:assertj-core:3.22.0'
     )
@@ -43,4 +42,20 @@ test {
 
 compileJava {
     options.release = 17
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
+
+checkstyle {
+    toolVersion '9.2.1'
+}
+
+testlogger {
+    theme 'standard' // project level
+    showStandardStreams true
+    slowThreshold 2000
 }

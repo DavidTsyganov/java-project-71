@@ -4,6 +4,8 @@ run-dist:
 run-help:
 	./build/install/app/bin/app --help
 
+report:
+	gradle jacocoTestReport
 
 build:
 	gradle clean build
