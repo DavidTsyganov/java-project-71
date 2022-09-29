@@ -4,7 +4,7 @@ import hexlet.code.Status;
 
 import java.util.Map;
 
-public class Stylish {
+public class StylishFormatter {
     public static final String NAME_OF_FORMATTER = "stylish";
 
     public static String format(final Map<String, Status> map) {
