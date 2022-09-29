@@ -19,6 +19,18 @@ public class Differ {
         return Formatter.choose(resultMap, formatName);
     }
 
+    // Default generator with a default format - stylish
+    public static String generate(final String filepath1,
+                                  final String filepath2) throws Exception {
+
+        Map<String, Object> map1 = Parser.getMap(filepath1);
+        Map<String, Object> map2 = Parser.getMap(filepath2);
+
+        Map<String, Status> resultMap = compareMaps(map1, map2);
+
+        return Formatter.choose(resultMap, "stylish");
+    }
+
 
     private static Map<String, Status> compareMaps(final Map<String, Object> map1, final Map<String, Object> map2) {
         Set<String> setOfKeys = new TreeSet<>();
