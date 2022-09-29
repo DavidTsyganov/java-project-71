@@ -12,9 +12,9 @@ class AppTest {
     public static final String YAML_FILEPATH2 = "src/test/resources/file2.yml";
     public static final String JSON_RESULT = "src/test/resources/json_result.diff";
     public static final String YAML_RESULT = "src/test/resources/yaml_result.diff";
-    public static final String PLAIN_RESULT = "/home/dts/IdeaProjects/project2/app/src/test/resources/plain_result";
+    public static final String PLAIN_RESULT = "src/test/resources/plain_result";
 
-    public static final String RESULT_IN_JSON = "/home/dts/IdeaProjects/project2/app/src/test/resources/diff_in_json.json";
+    public static final String RESULT_IN_JSON = "src/test/resources/diff_in_json.json";
 
     @Test
     public void testYaml() throws Exception {

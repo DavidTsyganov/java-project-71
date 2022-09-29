@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import hexlet.formatters.JsonFormatter;
 import hexlet.formatters.PlainFormatter;
 import hexlet.formatters.StylishFormatter;

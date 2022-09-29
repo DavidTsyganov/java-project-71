@@ -35,7 +35,7 @@ public class StylishFormatter {
                     stringBuilder.append(System.lineSeparator());
                     break;
                 case ("unchanged"):
-                    stringBuilder.append("    " + key +": " + oldValue);
+                    stringBuilder.append("    " + key + ": " + oldValue);
                     stringBuilder.append(System.lineSeparator());
                     break;
                 default:

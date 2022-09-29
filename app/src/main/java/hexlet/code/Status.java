@@ -1,6 +1,6 @@
 package hexlet.code;
 
-public class Status {
+public final class Status {
     public static final String ADDED = "added";
     public static final String DELETED = "deleted";
     public static final String UNCHANGED = "unchanged";
@@ -10,10 +10,10 @@ public class Status {
     private Object oldValue;
     private Object newValue;
 
-    Status(final String statusName, final Object oldValue, final Object newValue) {
-        this.statusName = statusName;
-        this.oldValue = oldValue;
-        this.newValue = newValue;
+    Status(final String status, final Object oldVal, final Object newVal) {
+        this.statusName = status;
+        this.oldValue = oldVal;
+        this.newValue = newVal;
     }
 
     public String getStatusName() {
