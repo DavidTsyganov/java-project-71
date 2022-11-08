@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Differ {
+    private static final String STYLISH = "stylish";
     public static String generate(final String filepath1,
                                   final String filepath2,
                                   final String formatName) throws Exception {
@@ -28,7 +29,7 @@ public class Differ {
 
         Map<String, Status> resultMap = compareMaps(map1, map2);
 
-        return Formatter.choose(resultMap, "stylish");
+        return Formatter.choose(resultMap, STYLISH);
     }
 
 
