@@ -59,4 +59,10 @@ class AppTest {
         String result = Files.readString((Path.of(RESULT_IN_JSON)));
         assertThat(result).isEqualTo(diff);
     }
+
+    @Test
+    public void testFailedCase() throws Exception {
+        String formatName = "stylish";
+
+    }
 }
