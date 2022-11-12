@@ -14,15 +14,18 @@ public class Utils {
         if (filepath.equals("")) {
             throw new NoSuchElementException();
         }
-        Path path = Paths.get(filepath);
-        String content = Files.readString(path);
-        return content;
+
+        Path path = Paths.get(getLocalFilePath(filepath));
+        return Files.readString(path);
 
     }
 
-    public static String getFileExtension(final String filepath) {
-        int indexOfDot = filepath.lastIndexOf(".");
-        return filepath.substring(indexOfDot + 1);
+    public static String getLocalFilePath(String filePath) {
+        return filePath.substring(filePath.indexOf("src"));
+    }
+
+    public static String getFileType(final String filePath) {
+        return filePath.substring(filePath.indexOf(".") + 1);
     }
 
 }

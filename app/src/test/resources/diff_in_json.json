@@ -1,1 +1,17 @@
-{"chars1":{"statusName":"unchanged","oldValue":["a","b","c"],"newValue":["a","b","c"]},"chars2":{"statusName":"changed","oldValue":["d","e","f"],"newValue":false},"checked":{"statusName":"changed","oldValue":false,"newValue":true},"default":{"statusName":"changed","oldValue":null,"newValue":["value1","value2"]},"id":{"statusName":"changed","oldValue":45,"newValue":null},"key1":{"statusName":"deleted","oldValue":"value1","newValue":null},"key2":{"statusName":"added","oldValue":null,"newValue":"value2"},"numbers1":{"statusName":"unchanged","oldValue":[1,2,3,4],"newValue":[1,2,3,4]},"numbers2":{"statusName":"changed","oldValue":[2,3,4,5],"newValue":[22,33,44,55]},"numbers3":{"statusName":"deleted","oldValue":[3,4,5],"newValue":null},"numbers4":{"statusName":"added","oldValue":null,"newValue":[4,5,6]},"obj1":{"statusName":"added","oldValue":null,"newValue":{"nestedKey":"value","isNested":true}},"setting1":{"statusName":"changed","oldValue":"Some value","newValue":"Another value"},"setting2":{"statusName":"changed","oldValue":200,"newValue":300},"setting3":{"statusName":"changed","oldValue":true,"newValue":"none"}}
+[
+{"key": "chars1", "oldvalue": ["a", "b", "c"], "newvalue": ["a", "b", "c"], "status": "unchanged"},
+{"key": "chars2", "oldvalue": ["d", "e", "f"], "newvalue": false, "status": "updated"},
+{"key": "checked", "oldvalue": false, "newvalue": true, "status": "updated"},
+{"key": "default", "oldvalue": null, "newvalue": ["value1", "value2"], "status": "updated"},
+{"key": "id", "oldvalue": 45, "newvalue": null, "status": "updated"},
+{"key": "key1", "oldvalue": "value1", "status": "removed"},
+{"key": "key2", "newvalue": "value2", "status": "added"},
+{"key": "numbers1", "oldvalue": [1, 2, 3, 4], "newvalue": [1, 2, 3, 4], "status": "unchanged"},
+{"key": "numbers2", "oldvalue": [2, 3, 4, 5], "newvalue": [22, 33, 44, 55], "status": "updated"},
+{"key": "numbers3", "oldvalue": [3, 4, 5], "status": "removed"},
+{"key": "numbers4", "newvalue": [4, 5, 6], "status": "added"},
+{"key": "obj1", "newvalue": {"nestedKey": "value", "isNested": true}, "status": "added"},
+{"key": "setting1", "oldvalue": "Some value", "newvalue": "Another value", "status": "updated"},
+{"key": "setting2", "oldvalue": 200, "newvalue": 300, "status": "updated"},
+{"key": "setting3", "oldvalue": true, "newvalue": "none", "status": "updated"}
+]
