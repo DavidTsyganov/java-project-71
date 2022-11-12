@@ -3,7 +3,9 @@ package hexlet.code;
 
 import hexlet.utils.Utils;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+
 
 public class Differ {
     private static final String STYLISH = "stylish";
