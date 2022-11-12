@@ -1,7 +1,13 @@
 package hexlet.code;
 
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Comparer {
     public static List<Map<String, Object>> compare(final Map<String, Object> map1, final Map<String, Object> map2) {
