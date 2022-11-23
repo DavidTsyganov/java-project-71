@@ -6,8 +6,8 @@ public enum Codes {
 
     private int value;
 
-    private Codes(final int value) {
-        this.value = value;
+    Codes(int val) {
+        this.value = val;
     }
 
     public int getValue() {

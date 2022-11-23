@@ -1,6 +1,6 @@
 package hexlet.code;
 
-public class UnknownFormatException extends Exception {
+public final class UnknownFormatException extends Exception {
     private String message = "There's no such format of file.";
     @Override
     public String getMessage() {
