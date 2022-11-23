@@ -1,9 +1,9 @@
-package hexlet.formatters;
+package hexlet.code.formatters;
 
 import java.util.List;
 import java.util.Map;
 
-public class StylishFormatter {
+public class Stylish {
     private static final String[] DIFFERENCE = {"    ", "  - ", "  + "};
     private static StringBuilder stringBuilder;
 

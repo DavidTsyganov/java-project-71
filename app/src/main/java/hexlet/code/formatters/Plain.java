@@ -1,9 +1,9 @@
-package hexlet.formatters;
+package hexlet.code.formatters;
 
 import java.util.List;
 import java.util.Map;
 
-public class PlainFormatter {
+public class Plain {
     private static StringBuilder stringBuilder;
     public static String toString(final List<Map<String, Object>> resultList) {
         stringBuilder = new StringBuilder();
